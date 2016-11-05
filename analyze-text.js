@@ -12,10 +12,13 @@ function analyzeText(text){
 	}
 	console.log('Таблица частотности:');
 	var Ic = 0;
+	var power = 0;
 	for(var symbol in symbols) {
 		console.log('"'+symbol+'" : '+(symbols[symbol]/text.length).toFixed(5));
 		Ic+=symbols[symbol]*(symbols[symbol]-1);
+		power++;
 	}
+	console.log('Мощность алфавита: '+power);
 	console.log('Индекс совпадения: '+(Ic/text.length/(text.length-1)).toFixed(6));
 
 }
