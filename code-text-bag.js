@@ -27,28 +27,9 @@ function codeText(text,N){
 	text = text.replace(/\n$/,'');
 
 	var slen = 16;
-	var seq =
-[ 6,
-  11,
-  31,
-  53,
-  115,
-  232,
-  450,
-  913,
-  1818,
-  3642,
-  7274,
-  14559,
-  29114,
-  58234,
-  116463,
-  232929 ]
-	//generateSuperincSequence(slen,sl(1,7));
+	var seq = generateSuperincSequence(slen,sl(1,7));
 	N = 1*N;
-	//var N = (1024000).nextPrime();
-	var E = //sl(1024, N-1);
-	415238;
+	var E = sl(1024, N-1);
 
 	console.log(seq,N,E);
 	var arr = makePseudobitArray(text)
@@ -65,7 +46,6 @@ function codeText(text,N){
 	for (var i = 0; i < symbols; i++) {
 		var nextNum = 0;
 		for (var j = 0; j < slen; j++) {
-			//console.log(arr[i*slen+j]*seq[j]);
 			nextNum += arr[i*slen+j]*seq[j];
 		}
 		codedText += nextNum + ";";

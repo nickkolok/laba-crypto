@@ -12,7 +12,6 @@ function makePseudobitArray(codes,seq) {
 		codes[i] = 1 * codes[i];
 		for (var j = seq.length - 1; j >=0 ; j--) {
 			seq[j] = 1*seq[j];
-			//console.log(codes[i],seq[j]);
 			if (codes[i] >= seq[j]) {
 				arr.push(1);
 				codes[i] -= seq[j]
@@ -27,7 +26,6 @@ function makePseudobitArray(codes,seq) {
 
 function detranslateSeq(seq,E,N) {
 	var d = E.reverseInField(N);
-	//console.log(d);
 	for (var i = 0; i < seq.length; i++) {
 		seq[i] = 1*seq[i]*d%N;
 	}
